@@ -32,7 +32,7 @@ const Update = () => {
     const handleUpdateSubmit =  (event) => {
         event.preventDefault()
         const values = {  email: email,password:password,oldpassword:oldpassword}
-        const url="https://roxilerinternship.onrender.com/update"
+        const url="http://localhost:3000/update"
         axios.put(url,values)
         .then(response=>{ 
           console.log(response)
