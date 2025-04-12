@@ -43,7 +43,7 @@ const Register = () => {
     const handleRegisterSubmit =  (event) => {
         event.preventDefault()
         const values = { name: username, email: email, password: password, address: address, role: role }
-        const url="http://localhost:3000/register"
+        const url="https://roxilerinternship.onrender.com/register"
         axios.post(url,values)
         .then(response=>{
           console.log(response.data.Status)

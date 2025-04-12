@@ -13,7 +13,7 @@ class GetUsers extends Component {
 
     getUserDetails = async() => {
         this.setState({isLoading:true})
-        const url = "http://localhost:3000/usercard"
+        const url = "https://roxilerinternship.onrender.com/usercard"
         const options = {
             method: 'GET',
         }
