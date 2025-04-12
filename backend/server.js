@@ -1,23 +1,27 @@
 const express = require("express")
-const cors = require("cors")
 const path = require("path")
 const bcrypt = require("bcrypt")
 const jwt = require("jsonwebtoken")
 const sqlite3 = require("sqlite3")
 const { open } = require("sqlite")
-const { error } = require("console")
+const cors = require('cors');
 
 const app = express()
 app.use(express.json())
 
-app.use(cors({ origin: 'http://localhost:5173' }));
+app.use(cors());
+
+
+
+
 
 
 const salt = 10
 
-const dbPath = path.join(__dirname, "roxiler.db")
+const dbPath = path.join(__dirname, "users.db")
 
 let db = null
+console.log(dbPath)
 
 const initializeDBAndServer = async() => {
     try {
@@ -56,7 +60,7 @@ initializeDBAndServer();
 
 
 
-
+/*register for the webappp*/
 
 app.post("/register", async(request, response) => {
 
@@ -126,7 +130,7 @@ app.post("/register", async(request, response) => {
     console.log(request.body)
 })*/
 
-
+/*login to web app*/
 
 app.post("/login", async(request, response) => {
     const { email, password, role } = request.body;
@@ -158,7 +162,7 @@ app.post("/login", async(request, response) => {
     console.log(request.body)
 });
 
-
+/*update password*/
 
 app.put("/update", async(request, response) => {
     const { email, password, oldpassword } = request.body;
@@ -185,6 +189,56 @@ app.put("/update", async(request, response) => {
     response.send({ Status: "Success" });
     console.log("password succesfully updated")
 });
+
+/*post store information */
+app.post("/post", (request, response) => {
+    const sqlStore = `INSERT INTO store (name,image,address,description)
+    VALUES(
+        '${request.body.name}',
+        '${request.body.image}'
+        '${request.body.address}',
+        '${request.body.description}',
+    );
+
+    `;
+
+    db.run(sqlStore)
+    response.send({ Status: "Success" })
+});
+
+/* get all stores*/
+
+app.get("/store", async(request, response) => {
+    const getQuery = `
+        SELECT name,image,address,description FROM store;
+    `;
+    const getData = await db.all(getQuery)
+    response.send({ getData })
+})
+
+
+/* get all users*/
+
+app.get("/usercard", async(request, response) => {
+    response.set('content-type', 'application/json');
+
+    const allNameQuery = `
+        SELECT name,email,address,role FROM user;
+    `;
+    const allNameArray = await db.all(allNameQuery);
+    response.send(allNameArray)
+})
+
+
+/*app.get('/average-rating',async (request,response)=>{
+    const averageRatingQuery=`
+        SELECT AVG(rating)
+        FROM rating INNER JOIN store
+        ON rating.name=store.name
+        GROUP BY store.name
+        WHERE 
+    `
+})*/
 
 
 

@@ -64,9 +64,9 @@ const Update = () => {
                     <label className='login-label' htmlFor='email-input'>EMAIL</label>
                     <input required type="email" className='input-container' placeholder='ENTER EMAIL' id="email-input" value={email} onChange={changeEmail} />
                     <label className='login-label' htmlFor='old-password-input'>OLD PASSWORD</label>
-                    <input required type="email" className='input-container' placeholder='ENTER OLD PASSWORD' id="old-password-input" value={oldpassword} onChange={changeoldPassword} />
+                    <input required type="password" className='input-container' placeholder='ENTER OLD PASSWORD' id="old-password-input" value={oldpassword} onChange={changeoldPassword} />
                     <label className='login-label' htmlFor='password-input'>NEW PASSWORD</label>
-                    <input required type="email" className='input-container' placeholder='ENTER NEW PASSWORD' id="password-input" value={password} onChange={changePassword} />
+                    <input required type="password" className='input-container' placeholder='ENTER NEW PASSWORD' id="password-input" value={password} onChange={changePassword} />
                     <div className="login-button-container" >
                         <button className="login-button" type="submit" >Update</button>
                         <IoMdLogIn className="login-icon"/>

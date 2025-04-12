@@ -36,6 +36,7 @@
     width: 400px;
     height: 40px;
     cursor: pointer;
+    color: #29323c;
     border: 2px solid #29323c;
     outline: none;
     border-radius: 15px;
@@ -48,14 +49,19 @@
 
 .login-text-animation {
     display: inline-block;
+    margin-right: auto;
+    text-align: left;
+    align-self: start;
 }
 
 .register-text {
     color: #29323c;
     font-size: 30px;
     width: 100%;
+    text-align: left;
     overflow: hidden;
     white-space: nowrap;
+    margin-right: auto;
     letter-spacing: 1px;
     font-weight: bold;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;

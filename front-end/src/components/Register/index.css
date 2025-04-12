@@ -182,6 +182,7 @@
 
 .login-button:hover {
     color: whitesmoke;
+    outline: none;
 }
 
 .login-png {

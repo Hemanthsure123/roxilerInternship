@@ -45,7 +45,7 @@ const Login = () => {
           }
           Cookies.set('role',role,{expires:30})
           Cookies.set('jwt_token', jwtToken, {expires: 30})
-          navigate("/")
+          navigate("/home")
           
         })
         .catch(error=>{
@@ -70,7 +70,7 @@ const Login = () => {
                     <label className='login-label' htmlFor='email-input'>EMAIL</label>
                     <input required type="email" className='input-container' placeholder='ENTER EMAIL' id="email-input" value={email} onChange={changeEmail} />
                     <label className='login-label' htmlFor='password-input'>PASSWORD</label>
-                    <input required type="password" className='input-container' placeholder='ENTER EMAIL' id="password-input" value={password} onChange={changePassword} />
+                    <input required type="password" className='input-container' placeholder='ENTER PASSWORD' id="password-input" value={password} onChange={changePassword} />
                     <label className='login-label' htmlFor='role-input'>ROLE</label>
                     <select className='inputs-container' id="role-input" value={role} onChange={changeRole} >
                         <option id="admin" value="Admin">System Admin</option>
@@ -84,7 +84,7 @@ const Login = () => {
                 </form>
                 <div className='login-option-text'>
                     <h3 className="login-text" >Don't have an Account! </h3>
-                    <Link className='create-one' to="/register">
+                    <Link className='create-one' to="/">
                         <p>Create one</p>
                     </Link>
                 </div>

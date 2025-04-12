@@ -72,12 +72,11 @@ const Register = () => {
               <label className='logins-label' htmlFor='email-input'>EMAIL</label>
               <input required type="email" className='inputs-container' placeholder='ENTER EMAIL' id="email-input" value={email} onChange={changeEmail} />
               <label className='logins-label' htmlFor='password-input'>PASSWORD</label>
-              <input required type="password" className='inputs-container' placeholder='ENTER EMAIL' id="password-input" value={password} onChange={changePassword} />
+              <input required type="password" className='inputs-container' placeholder='ENTER PASSWORD' id="password-input" value={password} onChange={changePassword} />
               <label className='logins-label' htmlFor='address-input'>ADDRESS</label>
               <textarea required rows={5} cols={5} className='address-input' id="address-input" value={address} onChange={changeAddress} placeholder='ENTER ADDRESS'/>
               <label className='logins-label' htmlFor='role-input'>ROLE</label>
               <select className='inputs-container' id="role-input" value={role} onChange={changeRole} >
-                <option id="admin" value="Admin">System Admin</option>
                 <option id="customer" value="Customer">Customer</option>
                 <option id="store owner" value="Store Owner">Store Owner</option>        
               </select>
