@@ -20,6 +20,8 @@ const salt = 10
 
 const dbPath = path.join(__dirname, "users.db")
 
+app.use(express.static(path.join(__dirname, '/front-end/dist')))
+
 let db = null
 console.log(dbPath)
 
