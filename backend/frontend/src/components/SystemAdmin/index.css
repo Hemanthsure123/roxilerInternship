@@ -1,0 +1,52 @@
+.system-details {
+    background-color: #212121;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+}
+
+.role {
+    color: whitesmoke;
+    font-size: 24px;
+    font-weight: 400;
+    text-align: left;
+}
+
+.update-password {
+    align-self: flex-start;
+}
+
+.functional-button {
+    min-width: 250px;
+    max-width: 500px;
+    height: 50px;
+    border: 0px;
+    outline: none;
+    border-radius: 10px;
+    margin: 10px;
+}
+
+.logout-button {
+    width: 250px;
+    height: 50px;
+    border: 0px;
+    outline: none;
+    border-radius: 10px;
+    margin: 10px;
+}
+
+.functional-button:hover {
+    background-color: transparent;
+    outline: none;
+    border: 2px solid whitesmoke;
+    color: whitesmoke;
+}
+
+.logout-button:hover {
+    background-color: transparent;
+    outline: none;
+    border: 2px solid whitesmoke;
+    color: whitesmoke;
+}
