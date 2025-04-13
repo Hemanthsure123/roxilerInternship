@@ -11,7 +11,7 @@ class GetStore extends Component{
 
     async getStoreDetails() {
         try {
-          const response = await fetch('http://localhost:3000/store');
+          const response = await fetch('https://roxilerinternship.onrender.com/store');
           if (!response.ok) {
             throw new Error(`HTTP error! Status: ${response.status}`);
           }
